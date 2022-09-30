@@ -1,7 +1,7 @@
 pipeline{
     environment{
         dockerImage = ''
-        registryName = "krushnabhanage10/azdo-slave:latest"
+        registryName = "krushnabhanage10/azdo-slave"
         registryCredential = 'dockerhub'
         registryUrl = 'krushnaacr.azurecr.io'
         tag = 'latest'
