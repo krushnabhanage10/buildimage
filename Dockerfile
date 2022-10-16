@@ -25,7 +25,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommend
     libstdc++6 \
     zlib1g
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
-RUN apt-get update && apt-get install -y dotnet-sdk-6.0 aspnetcore-runtime-6.0
+RUN apt-get update && apt-get install -y dotnet-sdk-6.0
 RUN rm packages-microsoft-prod.deb && rm -rf /var/lib/apt/lists/*
 RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin -Channel 6.0 -Runtime dotnet -InstallDir /usr/share/dotnet \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
