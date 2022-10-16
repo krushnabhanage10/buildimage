@@ -1,7 +1,7 @@
 FROM bitnami/kubectl:latest as kubectl
 FROM ubuntu:20.04
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install software-properties-common -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive add-apt-repository universe -y $$ apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
     apt-transport-https \
     apt-utils \
