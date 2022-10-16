@@ -25,9 +25,11 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommend
     libstdc++6 \
     zlib1g
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
-RUN apt-get update && apt-get install -y dotnet-sdk-6.0
-RUN rm packages-microsoft-prod.deb && rm -rf /var/lib/apt/lists/*
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+RUN apt-get update &&\
+    apt-get install -y dotnet-sdk-6.0 &&\
+    rm packages-microsoft-prod.deb &&\
+    rm -rf /var/lib/apt/lists/* &&\
+    curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 # Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
 ENV TARGETARCH=linux-x64
 RUN curl -fsSL https://get.docker.com | sh
