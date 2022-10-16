@@ -4,7 +4,7 @@ pipeline{
         registryName = "krushnabhanage10/azdo-slave"
         registryCredential = 'dockerhub'
         registryUrl = 'krushnaacr.azurecr.io'
-        tag = 'javamaven'
+        tag = 'javamavenpythondotnet'
     }
     agent{
         kubernetes{
