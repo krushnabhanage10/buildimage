@@ -16,7 +16,18 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommend
     default-jre \
     maven \
     python3 \
-    python3-pip
+    python3-pip \
+    # .NET dependencies
+    libc6 \
+    libgcc1 \
+    libgssapi-krb5-2 \
+    libicu66 \
+    libssl1.1 \
+    libstdc++6 \
+    zlib1g
+RUN rm -rf /var/lib/apt/lists/*
+RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin -Channel 6.0 -Runtime dotnet -InstallDir /usr/share/dotnet \
+    && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 # Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
 ENV TARGETARCH=linux-x64
