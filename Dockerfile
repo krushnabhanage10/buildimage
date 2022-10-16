@@ -45,8 +45,6 @@ RUN curl -sL https://deb.nodesource.com/setup | sudo bash - &&\
     npm ls -g --depth=0
 
 
-apt-get install -yq nodejs build-essential
-
 COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
 WORKDIR /azp
 COPY ./start.sh .
