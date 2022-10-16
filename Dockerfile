@@ -1,7 +1,6 @@
 FROM bitnami/kubectl:latest as kubectl
 FROM ubuntu:20.04
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install software-properties-common -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
     apt-transport-https \
     apt-utils \
@@ -25,7 +24,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommend
     libssl1.1 \
     libstdc++6 \
     zlib1g
-RUN rm -rf /var/lib/apt/lists/*
+RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
+RUN apt-get update && apt-get install -y dotnet-sdk-6.0 aspnetcore-runtime-6.0
+RUN rm packages-microsoft-prod.deb && rm -rf /var/lib/apt/lists/*
 RUN curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin -Channel 6.0 -Runtime dotnet -InstallDir /usr/share/dotnet \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
