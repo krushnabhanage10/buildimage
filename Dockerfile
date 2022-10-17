@@ -34,7 +34,7 @@ RUN apt-get update &&\
 ENV TARGETARCH=linux-x64
 RUN curl -fsSL https://get.docker.com | sh
 
-RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
+RUN curl -sL https://deb.nodesource.com/setup | bash -
 RUN apt-get install -yq nodejs build-essential &&\
     npm install -g npm &&\
     npm install -g yo grunt-cli bower express &&\
