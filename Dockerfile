@@ -23,7 +23,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommend
     libicu66 \
     libssl1.1 \
     libstdc++6 \
-    zlib1g
+    zlib1g \
+    nodejs \
+    npm
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
 RUN apt-get update &&\
     apt-get install -y dotnet-sdk-6.0 &&\
@@ -34,15 +36,15 @@ RUN apt-get update &&\
 ENV TARGETARCH=linux-x64
 RUN curl -fsSL https://get.docker.com | sh
 
-RUN curl -sL https://deb.nodesource.com/setup | bash -
-RUN apt-get install -yq nodejs build-essential &&\
-    npm install -g npm &&\
-    npm install -g yo grunt-cli bower express &&\
-    which node &&\
-    node -v &&\
-    which npm &&\ 
-    npm -v; &&\
-    npm ls -g --depth=0
+# RUN curl -sL https://deb.nodesource.com/setup | bash -
+# RUN apt-get install -yq nodejs build-essential &&\
+#     npm install -g npm &&\
+#     npm install -g yo grunt-cli bower express &&\
+#     which node &&\
+#     node -v &&\
+#     which npm &&\ 
+#     npm -v; &&\
+#     npm ls -g --depth=0
 
 
 COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
