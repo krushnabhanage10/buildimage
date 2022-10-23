@@ -1,10 +1,10 @@
 pipeline{
     environment{
         dockerImage = ''
-        registryName = "krushnabhanage10/azdo-slave"
+        registryName = "krushnabhanage10/jnlp-slave"
         registryCredential = 'dockerhub'
         registryUrl = 'krushnaacr.azurecr.io'
-        tag = 'javamavenpythondotnetnodejs'
+        tag = 'kubectl2nodejs'
     }
     agent{
         kubernetes{
