@@ -4,7 +4,7 @@ pipeline{
         registryName = "krushnabhanage10/jnlp-slave"
         registryCredential = 'dockerhub'
         registryUrl = 'krushnaacr.azurecr.io'
-        tag = 'kubectl2nodejs'
+        tag = 'kubectl2'
     }
     agent{
         kubernetes{
