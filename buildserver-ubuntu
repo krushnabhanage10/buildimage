@@ -1,0 +1,36 @@
+    1  passwd root
+    2  useradd krushna
+    3  passwd krushna
+    4  top
+    5  apt-get update
+    6  cat /etc/os-release
+    7  ls
+    8  sudo apt-get update
+    9  sudo mkdir -p /etc/apt/keyrings
+   10  pg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   11  sudo mkdir -p /etc/apt/keyrings
+   12  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   13  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   14  sudo apt-get update
+   15  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose docker-compose-plugin
+   16  docker ps
+   17  systemctl status docker
+   18  systemctl enable docker
+   19  pwd
+   20  crontab -e
+   21  crontab -l
+   22  vi /root/startup.sh
+   23  cat startup.sh
+   24  chmod +x startup.sh
+   25  ls -ltrh
+   26  ls
+   27  dd if=/dev/zero of=/mnt/8GiB.swap bs=8192 count=1048576
+   28  chmod 600 /mnt/8GiB.swap
+   29  mkswap /mnt/8GiB.swap
+   30  swapon /mnt/8GiB.swap
+   31  df -h
+   32  free -h
+   33  echo '/mnt/8GiB.swap swap swap defaults 0 0' | sudo tee -a /etc/fstab
+   34  cat /etc/fstab
+   35  history
