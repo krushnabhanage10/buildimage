@@ -39,7 +39,7 @@ spec:
       privileged: true
       runAsUser: 0
   - name: docker
-    image: docker:19.03.1-dind
+    image: docker:20.10-dind
     volumeMounts:
     - mountPath: /var/run/
       name: docker-sock
