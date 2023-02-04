@@ -61,7 +61,6 @@ pipeline{
     stages{
         stage("Image_Build_Push"){
             steps{
-              container('jnlp'){
                 dir("${workspace}/buildimage"){
                     sh "pwd"
                     //sh "docker build -t krushnabhanage10/dotnetapp:jenkins ."
@@ -73,7 +72,6 @@ pipeline{
                         dockerImage.push()
                     }
                 }
-            }
             }
         }
     }
