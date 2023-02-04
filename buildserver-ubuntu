@@ -34,3 +34,4 @@
    33  echo '/mnt/8GiB.swap swap swap defaults 0 0' | sudo tee -a /etc/fstab
    34  cat /etc/fstab
    35  history
+   36  echo 'vm.swappiness=96' | sudo tee -a /etc/sysctl.conf
