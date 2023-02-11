@@ -37,7 +37,7 @@ pipeline{
 //         memory: 300Mi
 //     env:
 //     - name: JENKINS_URL
-//       value: http://8.218.38.89:8080/
+//       value: http://47.242.21.13:8080/
 //     securityContext:
 //       privileged: true
 //       runAsUser: 0
