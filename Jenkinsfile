@@ -31,10 +31,10 @@ spec:
     resources:
       limits:
         cpu: 400m
-        memory: 600Mi
+        memory: 512Mi
       requests:
-        cpu: 200m
-        memory: 300Mi
+        cpu: 100m
+        memory: 256Mi
     env:
     - name: JENKINS_URL
       value: http://47.242.21.13:8080/
