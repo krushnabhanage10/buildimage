@@ -8,7 +8,7 @@ pipeline{
     }
     agent{
       label "vm"
-//     }
+    }
 //     agent{
 //         kubernetes{
 //     label 'k8sagent'
