@@ -1,5 +1,5 @@
 FROM bitnami/kubectl:latest as kubectl
-FROM jenkins/inbound-agent:latest-jdk17
+FROM jenkins/inbound-agent:latest-jdk21
 USER root
 RUN apt update && apt upgrade -y && apt-get install git curl apt-transport-https lsb-release gnupg wget software-properties-common -y && curl -fsSL https://get.docker.com | sh
 RUN mkdir -p /usr/share/man/man1
