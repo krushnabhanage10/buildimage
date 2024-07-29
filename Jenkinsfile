@@ -37,7 +37,7 @@ spec:
         memory: 256Mi
     env:
     - name: JENKINS_URL
-      value: http://47.242.21.13:80/
+      value: http://146.56.53.23:8080/
     securityContext:
       privileged: true
       runAsUser: 0
