@@ -67,7 +67,7 @@ spec:
                 }
                 script{
                     withDockerRegistry(/*url: "https://${registryUrl}",*/ credentialsId: registryCredential) {
-                        dockerImage = docker.build("${registryName}:${tag}")
+                        dockerImage = docker.build("${registryName}:${tag}", "--platform linux/amd64,linux/arm64")
                         //sh "docker push $registryName:$tag"
                         dockerImage.push()
                     }
