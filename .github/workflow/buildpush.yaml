@@ -2,7 +2,11 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - "azdo-slave-javamavenpythondotnetnodejs"
+  push:
+    branches:
+      - "jnlp-slave-javamavenpythondotnetnodejs"
   pull_request:
     branches: [ "master" ]
 
