@@ -12,7 +12,6 @@ RUN wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-p
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb && 
 RUN sudo add-apt-repository universe
-ENV TARGETARCH=linux-x64
 RUN curl -fsSL https://get.docker.com | sh
 RUN apt-get install && apt-get update && apt-get install -y powershell azure-cli dotnet-sdk-6.0
 RUN az bicep install
