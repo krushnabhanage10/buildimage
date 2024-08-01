@@ -11,7 +11,7 @@ RUN echo "deb [signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] http
 RUN wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
-RUN sudo add-apt-repository universe
+RUN add-apt-repository universe
 RUN curl -fsSL https://get.docker.com | sh
 RUN apt-get install && apt-get update && apt-get install -y powershell azure-cli dotnet-sdk-6.0
 RUN az bicep install
