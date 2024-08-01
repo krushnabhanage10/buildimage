@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Jenkins Projects Build-Agent Image
 
 on:
   push:

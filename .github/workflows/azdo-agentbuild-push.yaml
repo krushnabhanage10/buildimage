@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Azure DevOps Projects Build-Agent Image
 
 on:
   push:
