@@ -29,21 +29,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommend
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb && rm packages-microsoft-prod.deb
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
-# Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
 RUN curl -fsSL https://get.docker.com | sh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# RUN curl -sL https://deb.nodesource.com/setup | bash -
-# RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
-# RUN apt-get install -yq nodejs build-essential &&\
-#     npm install -g npm &&\
-#     npm install -g yo grunt-cli bower express &&\
-#     which node &&\
-#     node -v &&\
-#     which npm &&\ 
-#     npm -v; &&\
-#     npm ls -g --depth=0
-
 
 COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
 WORKDIR /azp
