@@ -8,8 +8,8 @@ on:
 
 env:
   REPO_NAME: krushnabhanage10
-  IMAGE_NAME: pythonapp
-  IMAGE_TAG: javamavenpythondotnetnodejs
+  IMAGE_NAME: jnlp-slave
+  IMAGE_TAG: javamavenpythonnodejs
   DOCKERFILE_PATH: jenkins-agent/Dockerfile
   
 jobs:
