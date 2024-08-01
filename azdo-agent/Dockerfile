@@ -32,6 +32,7 @@ RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 # Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
 ENV TARGETARCH=linux-x64
 RUN curl -fsSL https://get.docker.com | sh
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # RUN curl -sL https://deb.nodesource.com/setup | bash -
 # RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
