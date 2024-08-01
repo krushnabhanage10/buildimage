@@ -13,4 +13,4 @@ RUN dpkg -i packages-microsoft-prod.deb
 RUN curl -fsSL https://get.docker.com | sh
 RUN apt-get install && apt-get update && apt-get install -y azure-cli dotnet-sdk-6.0
 RUN az bicep install
-RUN rm powershell_7.4.4-1.deb_amd64.deb packages-microsoft-prod.deb && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN rm packages-microsoft-prod.deb && apt-get clean && rm -rf /var/lib/apt/lists/*
