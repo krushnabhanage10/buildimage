@@ -9,7 +9,7 @@ on:
 env:
   REPO_NAME: krushnabhanage10
   IMAGE_NAME: pythonapp
-  IMAGE_TAG: javamavenpythonnodejs
+  IMAGE_TAG: javamavenpythondotnetnodejs
   DOCKERFILE_PATH: jenkins-agent/Dockerfile
   
 jobs:
